@@ -4,7 +4,6 @@ const stats = [
   { value: '$100K+', label: 'in B2B revenue closed' },
   { value: '$20K+', label: 'raised in sponsorships' },
   { value: '60+', label: 'artists activated across 5 cities' },
-  { value: 'Top 3', label: 'in a national sales training cohort' },
   { value: 'Top 1%', label: 'regional performer' },
 ]
 
