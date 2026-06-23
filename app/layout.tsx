@@ -9,11 +9,33 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 })
 
+const siteTitle = 'Sponsorship outreach, built like software. | Krash Partners'
+const siteDescription =
+  'Sponsorship outreach, built like software. AI-assisted event sponsorship outreach for festivals, conferences, and creator events.'
+
 export const metadata: Metadata = {
-  title: 'Krash Partners — B2B lead generation, built like software',
-  description:
-    'Krash Partners runs outbound that books qualified meetings — powered by Krash Outbound, an AI-assisted prospecting system we built in-house.',
+  title: siteTitle,
+  description: siteDescription,
   generator: 'v0.app',
+  openGraph: {
+    title: siteTitle,
+    description: siteDescription,
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Krash Partners — Sponsorship outreach, built like software.',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteTitle,
+    description: siteDescription,
+    images: ['/og-image.png'],
+  },
   icons: {
     icon: [
       {
