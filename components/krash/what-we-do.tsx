@@ -10,8 +10,8 @@ const items = [
     body: 'Outbound email that reads human and gets replies, not templated spam.',
   },
   {
-    label: 'Convert',
-    body: 'Qualified meetings handed off clean, tracked end to end.',
+    label: 'Track',
+    body: 'Opens, replies, and booked meetings tracked — clean handoff once the appointment lands.',
   },
 ]
 

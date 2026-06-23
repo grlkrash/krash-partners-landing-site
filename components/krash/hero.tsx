@@ -10,20 +10,20 @@ export function Hero() {
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <p className="mb-8 font-mono text-xs uppercase tracking-[0.25em] text-primary">
-            B2B lead generation, engineered
+            Event sponsorship outreach, engineered
           </p>
         </Reveal>
 
         <Reveal delay={80}>
           <h1 className="max-w-5xl text-balance text-5xl font-bold leading-[0.95] tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
-            B2B lead generation, built like software.
+            Sponsorship outreach, built like software.
           </h1>
         </Reveal>
 
         <Reveal delay={160}>
           <p className="mt-8 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground md:text-xl">
-            Krash Partners runs outbound that books qualified meetings —
-            powered by Krash Outbound, an AI-assisted prospecting system we
+            Krash Partners runs sponsorship outreach that books qualified
+            meetings — powered by Krash Outbound, an AI-assisted system we
             built in-house.
           </p>
         </Reveal>
