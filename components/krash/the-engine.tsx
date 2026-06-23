@@ -2,16 +2,16 @@ import { Reveal } from './reveal'
 
 const capabilities = [
   {
-    title: 'Lead & sponsor discovery',
-    body: 'Surfaces the right accounts and decision-makers — and the right events looking for sponsors.',
+    title: 'Sponsor discovery & brand curation',
+    body: 'Finds brands that fit the event and curates a target list worth reaching out to.',
   },
   {
-    title: 'Buyer-signal detection',
-    body: 'Reads intent from real activity so you reach people when they are actually in-market.',
+    title: 'Contact enrichment & drafting',
+    body: 'Enriches the right decision-makers and drafts personalized cold emails for a human to approve.',
   },
   {
-    title: 'Outreach personalization',
-    body: 'Writes outbound that sounds like a person who did their homework, at scale.',
+    title: 'Follow-up & meeting tracking',
+    body: 'Sequences follow-ups and tracks opens, replies, and meetings booked through to the handoff.',
   },
 ]
 
@@ -36,9 +36,12 @@ export function TheEngine() {
             </Reveal>
             <Reveal delay={140}>
               <p className="mt-6 max-w-md text-pretty text-lg leading-relaxed text-muted-foreground">
-                A proprietary, AI-assisted prospecting system we own and built
-                ourselves. Not an off-the-shelf tool stitched together — the
-                machine that runs every campaign.
+                A proprietary, AI-assisted system for event sponsorship
+                outreach — sponsor discovery, brand curation, contact
+                enrichment, cold-email drafting, and follow-up sequencing. It
+                stays human-in-the-loop: AI drafts and enriches, a person
+                approves everything that touches a relationship. Built and
+                owned in-house.
               </p>
             </Reveal>
             <Reveal delay={200}>

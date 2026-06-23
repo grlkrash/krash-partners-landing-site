@@ -1,9 +1,9 @@
 import { Reveal } from './reveal'
 
 const audience = [
-  'Events and conferences seeking sponsors',
-  'B2B companies that need qualified pipeline',
-  'Founder-led teams without a sales org yet',
+  'Festivals looking for brand sponsors',
+  'Conferences building a sponsorship pipeline',
+  'Creator events that need the right partners',
 ]
 
 export function WhoItsFor() {
