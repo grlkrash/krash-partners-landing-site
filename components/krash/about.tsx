@@ -20,13 +20,32 @@ export function About() {
             </Reveal>
             <Reveal delay={160}>
               <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
-                Five-plus years in B2B and consultative sales before building
-                Krash Outbound — closing real revenue, raising sponsorships,
-                and activating artists across cities. The same instinct that
-                books meetings now ships as software. This is a placeholder
-                bio: swap in the founder&apos;s full story, the work that
-                proves it, and why outbound done right is a system, not a
-                spray.
+                Sonia Gibbs sells like an operator, builds like an engineer,
+                and thinks like a creator — and she&apos;s never seen those as
+                separate things.
+              </p>
+            </Reveal>
+            <Reveal delay={200}>
+              <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
+                She started building websites for brands when she was 13,
+                started selling at 20, and by 22 was closing sponsorship deals
+                — including from Polygon Technology, a roughly $10 billion
+                blockchain company — for live event activations she produced
+                across five cities: New York, Los Angeles, Austin (SXSW), Miami
+                (Art Basel), and Cincinnati. Along the way: $26K+ raised in
+                sponsorships, 60+ artists activated, and a track record among
+                the top performers at national sales organizations.
+              </p>
+            </Reveal>
+            <Reveal delay={240}>
+              <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
+                An artist-founder by instinct, she treats outbound like an
+                engineering problem. Krash Outbound — the AI-assisted system
+                powering Krash Partners — is what happens when someone
+                who&apos;s actually closed the deals decides to build the
+                machine for it. AI does the volume. A human approves everything
+                that touches a relationship. Because outbound done right is a
+                system, not a spray.
               </p>
             </Reveal>
           </div>
