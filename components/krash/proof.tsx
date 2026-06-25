@@ -42,8 +42,8 @@ export function Proof() {
                 Sponsorships closed
               </p>
               <p className="mt-3 text-pretty text-base leading-relaxed text-primary-foreground/85">
-                Polygon Technology and other web3 and tech brands, for live
-                event activations.
+                Polygon and other tech and creative brands, for live event
+                activations.
               </p>
             </div>
             <div className="flex flex-col">
