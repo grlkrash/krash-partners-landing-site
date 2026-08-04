@@ -24,7 +24,7 @@ export function Contact() {
               hello@krashpartners.com
             </a>
             <a
-              href="https://linkedin.com/in/grl3"
+              href="https://linkedin.com/in/soniagibbs"
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-2 rounded-md border border-border px-6 py-3 text-base font-medium transition-colors hover:border-primary/60"
