@@ -39,6 +39,12 @@ export function SiteHeader() {
           <a className="transition-colors hover:text-foreground" href="#proof">
             Proof
           </a>
+          <a
+            className="transition-colors hover:text-foreground"
+            href="#case-study"
+          >
+            Case study
+          </a>
         </nav>
 
         <a
