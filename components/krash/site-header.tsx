@@ -43,7 +43,7 @@ export function SiteHeader() {
             className="transition-colors hover:text-foreground"
             href="#case-study"
           >
-            Case study
+            Case studies
           </a>
         </nav>
 
