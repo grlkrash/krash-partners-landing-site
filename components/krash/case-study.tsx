@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Reveal } from './reveal'
 
 const results = [
@@ -24,22 +25,53 @@ export function CaseStudy() {
   return (
     <section
       id="case-study"
-      className="border-t border-border px-5 py-20 md:px-8 md:py-28"
+      className="relative overflow-hidden border-t border-border px-5 py-20 md:px-8 md:py-28"
     >
-      <div className="mx-auto max-w-6xl">
+      {/* AMF signature wireframe "bug" — brand accent, black field dropped via screen blend */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-16 -top-10 w-64 opacity-30 mix-blend-screen md:right-8 md:top-16 md:w-80 md:opacity-40"
+      >
+        <Image
+          src="/case-studies/amf-bug.png"
+          alt=""
+          width={484}
+          height={600}
+          className="h-auto w-full"
+        />
+      </div>
+
+      <div className="relative mx-auto max-w-6xl">
+        {/* Index + label */}
         <Reveal>
-          <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
-            Case study // Arcade Music Fest // June 2026
+          <div className="flex items-center gap-4">
+            <span className="font-mono text-sm font-semibold text-primary">
+              01
+            </span>
+            <span className="h-px flex-1 max-w-[3rem] bg-border" />
+            <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+              Case study // June 2026
+            </p>
+          </div>
+        </Reveal>
+
+        {/* AMF wordmark in their pixel type */}
+        <Reveal delay={60}>
+          <p
+            className="mt-8 text-lg leading-none text-primary md:text-2xl"
+            style={{ fontFamily: 'var(--font-pixel)' }}
+          >
+            Arcade Music Fest
           </p>
         </Reveal>
 
-        <Reveal delay={80}>
+        <Reveal delay={120}>
           <h2 className="mt-6 max-w-3xl text-balance text-3xl font-bold tracking-tight md:text-5xl">
             Two weeks of runway. A revenue line that didn&apos;t exist.
           </h2>
         </Reveal>
 
-        <Reveal delay={140}>
+        <Reveal delay={180}>
           <p className="mt-5 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
             Krash Partners was brought into Arcade Music Fest with roughly two
             weeks of effective runway before the partner deadline closed. In
@@ -50,7 +82,7 @@ export function CaseStudy() {
         </Reveal>
 
         {/* Facts */}
-        <Reveal delay={200}>
+        <Reveal delay={240}>
           <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 border-y border-border py-8 md:grid-cols-4">
             {facts.map((fact) => (
               <div key={fact.label} className="flex flex-col">
