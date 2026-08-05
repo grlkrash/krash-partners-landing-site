@@ -2,7 +2,13 @@ import Image from 'next/image'
 import { Reveal } from './reveal'
 
 type Fact = { label: string; value: string }
-type Result = { value: string; label: string }
+type Result = {
+  value: string
+  label: string
+  asterisk?: boolean
+  projected?: boolean
+}
+type Highlight = { title: React.ReactNode; body: string }
 
 type Brand =
   | { type: 'pixel'; name: string }
@@ -30,7 +36,8 @@ type Study = {
   results: {
     meta: string
     items: Result[]
-    footnote: string
+    highlight?: Highlight
+    footnote: React.ReactNode
   } | null
   closing: string
 }
@@ -76,13 +83,34 @@ const studies: Study[] = [
     results: {
       meta: '~2-week turnaround',
       items: [
-        { value: '~$3,225', label: 'New revenue generated for the fest (up to)' },
-        { value: '~17%', label: 'Lift on their ~$19.3k base, at water sell-out' },
-        { value: '4', label: 'New vendor & partner relationships' },
-        { value: '2wk', label: 'From engagement to closed partners' },
+        {
+          value: '~$4,075',
+          label: 'New revenue · ~21% on ~$19.3K base',
+          asterisk: true,
+        },
+        { value: '$1,975', label: 'Booked vendor fees' },
+        { value: '~$2,100', label: 'Projected water line', projected: true },
+        { value: '5', label: 'New vendor + partner deals' },
       ],
-      footnote:
-        '$1,125 booked vendor fees + ~$2,100 new water line, projected at sell-out.',
+      highlight: {
+        title: (
+          <>
+            <span style={{ color: '#FFFF00' }}>Alpine Valley Water</span>
+            <span className="text-foreground">
+              {' '}
+              — a new revenue line, not a sponsor check.
+            </span>
+          </>
+        ),
+        body: '840 bottles resold at $2.50 — up to ~$2,100, projected at sell-out (25 cases donated + 5 bought, ~$0 cost). Separately, $1,975 in vendor fees is already booked.',
+      },
+      footnote: (
+        <>
+          <span className="text-primary">*</span> ~$4,075 = $1,975 booked vendor
+          fees + ~$2,100 projected water resale at sell-out (realized on event
+          day).
+        </>
+      ),
     },
     closing:
       'Selling sponsorships ends when the check clears. Building revenue keeps paying.',
