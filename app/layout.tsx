@@ -21,7 +21,6 @@ const siteDescription =
 export const metadata: Metadata = {
   title: siteTitle,
   description: siteDescription,
-  generator: 'v0.app',
   openGraph: {
     title: siteTitle,
     description: siteDescription,
