@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import { Reveal } from './reveal'
 
+const ARCADE_YELLOW = '#FFFF00'
+
 type Fact = { label: string; value: string }
 type Result = { value: string; label: string }
 
@@ -35,58 +37,34 @@ type Study = {
   closing: string
 }
 
-const studies: Study[] = [
+const amfStats = [
   {
-    index: '01',
-    status: 'complete',
-    dateLabel: 'June 2026',
-    statusLabel: 'Complete',
-    accent: '#38e1ff',
-    brand: { type: 'pixel', name: 'Arcade Music Fest' },
-    title: "Two weeks of runway. A revenue line that didn't exist.",
-    intro:
-      'Krash Partners was brought into Arcade Music Fest with roughly two weeks of effective runway before the partner deadline closed. In that window we lifted sponsorship and vendor revenue — and engineered a brand-new on-site revenue stream at essentially zero cost to the festival.',
-    facts: [
-      { label: 'Client', value: 'Arcade Music Fest' },
-      { label: 'Format', value: '2-day music festival' },
-      { label: 'Location', value: 'Covington / Northern KY' },
-      { label: 'Scale', value: '8,000–10,000 attendees' },
-    ],
-    challenge: {
-      title: 'The challenge',
-      body: (
-        <>
-          A few weeks from event day, with the window for new partners nearly
-          shut. Most outreach shops would have called it too late to move the
-          number.{' '}
-          <span className="text-muted-foreground">
-            We treated the constraint as the brief.
-          </span>
-        </>
-      ),
-    },
-    engagement: {
-      title: 'What we did',
-      items: [
-        'Worked the existing sponsorship pipeline to lift vendor & sponsor revenue inside the deadline.',
-        'Structured a partnership with Alpine Valley Water — a new, recurring on-site revenue stream the fest resells directly.',
-        'Booked two esports vendors and a Kona Ice truck to widen the on-site draw and vendor mix.',
-      ],
-    },
-    results: {
-      meta: '~2-week turnaround',
-      items: [
-        { value: '~$3,225', label: 'New revenue generated for the fest (up to)' },
-        { value: '~17%', label: 'Lift on their ~$19.3k base, at water sell-out' },
-        { value: '4', label: 'New vendor & partner relationships' },
-        { value: '2wk', label: 'From engagement to closed partners' },
-      ],
-      footnote:
-        '$1,125 booked vendor fees + ~$2,100 new water line, projected at sell-out.',
-    },
-    closing:
-      'Selling sponsorships ends when the check clears. Building revenue keeps paying.',
+    value: '~$4,075',
+    asterisk: true,
+    label: 'new revenue · ~21% on ~$19.3K base',
+    projected: false,
   },
+  {
+    value: '$1,975',
+    asterisk: false,
+    label: 'booked vendor fees',
+    projected: false,
+  },
+  {
+    value: '~$2,100',
+    asterisk: false,
+    label: 'projected water line',
+    projected: true,
+  },
+  {
+    value: '5',
+    asterisk: false,
+    label: 'new vendor + partner deals',
+    projected: false,
+  },
+] as const
+
+const studies: Study[] = [
   {
     index: '02',
     status: 'live',
@@ -218,29 +196,133 @@ function Wordmark({ study }: { study: Study }) {
   )
 }
 
-function StudyBlock({ study, first }: { study: Study; first: boolean }) {
+function AmfCaseStudy() {
   return (
-    <article
-      className={`relative ${first ? '' : 'mt-20 border-t border-border pt-20 md:mt-28 md:pt-28'}`}
-    >
-      {/* AMF signature wireframe "bug" — only on study 01 */}
-      {study.index === '01' && (
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -right-16 -top-6 w-56 opacity-30 mix-blend-screen md:right-0 md:top-4 md:w-72 md:opacity-40"
-        >
-          <Image
-            src="/case-studies/amf-bug.png"
-            alt=""
-            width={484}
-            height={600}
-            className="h-auto w-full"
-          />
+    <article className="relative">
+      <Reveal>
+        <div className="flex flex-wrap items-baseline justify-between gap-3">
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">
+            Case study
+          </p>
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
+            Arcade Music Fest
+          </p>
         </div>
-      )}
+      </Reveal>
 
+      <div className="mt-8 grid items-start gap-10 md:grid-cols-[1fr_auto] md:gap-12">
+        <Reveal delay={60}>
+          <div>
+            <h3 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-5xl">
+              Two weeks. Real revenue.
+            </h3>
+            <p className="mt-5 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
+              Arcade Music Fest — a two-day festival, 8,000–10,000 attendees. We
+              came in with ~2 weeks of effective runway before the partner
+              deadline closed.
+            </p>
+          </div>
+        </Reveal>
+
+        <Reveal delay={120}>
+          <div className="flex flex-col items-start md:items-end">
+            <div className="flex h-[150px] w-full max-w-[390px] items-center justify-center overflow-hidden rounded-[10px] bg-card shadow-[0_8px_30px_rgba(0,0,0,0.35)] md:w-[390px]">
+              <Image
+                src="/case-studies/acmf-logo.png"
+                alt="Arcade Music Fest logo"
+                width={1311}
+                height={241}
+                className="h-auto w-full max-w-[340px] object-contain px-4"
+                priority
+              />
+            </div>
+            <p className="mt-3 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
+              Covington / NKY · Aug 8–9, 2026
+            </p>
+          </div>
+        </Reveal>
+      </div>
+
+      <Reveal delay={160}>
+        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {amfStats.map((stat) => (
+            <div
+              key={stat.label}
+              className={`relative rounded-[10px] bg-card p-6 shadow-[0_8px_30px_rgba(0,0,0,0.35)] ${
+                stat.projected
+                  ? 'bg-card/80 outline outline-1 outline-dashed outline-border'
+                  : ''
+              }`}
+            >
+              {stat.projected && (
+                <span className="absolute right-4 top-4 rounded-full border border-dashed border-primary/50 px-2 py-0.5 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-primary">
+                  Projected
+                </span>
+              )}
+              <p className="text-3xl font-bold tracking-tight text-primary md:text-4xl">
+                {stat.value}
+                {stat.asterisk && (
+                  <sup className="ml-0.5 text-lg font-bold text-primary">*</sup>
+                )}
+              </p>
+              <p className="mt-3 text-pretty text-sm leading-relaxed text-muted-foreground">
+                {stat.label}
+              </p>
+            </div>
+          ))}
+        </div>
+      </Reveal>
+
+      <Reveal delay={200}>
+        <div className="mt-4 flex gap-4 rounded-[10px] bg-card p-6 shadow-[0_8px_30px_rgba(0,0,0,0.35)] md:p-8">
+          <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-sm bg-secondary">
+            <Image
+              src="/case-studies/amf-bug.png"
+              alt="Arcade Music Fest pixel bug mark"
+              width={40}
+              height={40}
+              className="h-full w-full object-cover mix-blend-screen"
+            />
+          </div>
+          <div className="min-w-0">
+            <p className="text-pretty text-base font-bold tracking-tight md:text-lg">
+              <span style={{ color: ARCADE_YELLOW }}>Alpine Valley Water</span>
+              <span className="text-foreground">
+                {' '}
+                — a new revenue line, not a sponsor check.
+              </span>
+            </p>
+            <p className="mt-2 text-pretty text-sm leading-relaxed text-muted-foreground md:text-base">
+              840 bottles resold at $2.50 — up to ~$2,100, projected at sell-out
+              (25 cases donated + 5 bought, ~$0 cost). Separately, $1,975 in
+              vendor fees is already booked.
+            </p>
+          </div>
+        </div>
+      </Reveal>
+
+      <Reveal delay={240}>
+        <p className="mt-5 text-pretty text-[11px] leading-relaxed text-muted-foreground md:text-xs">
+          <span className="font-semibold text-primary">*</span>{' '}
+          ~$4,075 = $1,975 booked vendor fees + ~$2,100 projected water resale
+          at sell-out (realized on event day).
+        </p>
+      </Reveal>
+
+      <Reveal delay={280}>
+        <p className="mt-10 max-w-2xl text-pretty text-base italic leading-relaxed text-primary md:text-lg">
+          Selling sponsorships ends when the check clears. Building revenue
+          keeps paying.
+        </p>
+      </Reveal>
+    </article>
+  )
+}
+
+function StudyBlock({ study }: { study: Study }) {
+  return (
+    <article className="relative mt-20 border-t border-border pt-20 md:mt-28 md:pt-28">
       <div className="relative">
-        {/* Index + date label */}
         <Reveal>
           <div className="flex items-center gap-4">
             <span className="font-mono text-sm font-semibold text-primary">
@@ -253,7 +335,6 @@ function StudyBlock({ study, first }: { study: Study; first: boolean }) {
           </div>
         </Reveal>
 
-        {/* Brand wordmark / logo + status */}
         <Reveal delay={60}>
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
             <Wordmark study={study} />
@@ -262,9 +343,9 @@ function StudyBlock({ study, first }: { study: Study; first: boolean }) {
         </Reveal>
 
         <Reveal delay={120}>
-          <h2 className="mt-6 max-w-3xl text-balance text-3xl font-bold tracking-tight md:text-5xl">
+          <h3 className="mt-6 max-w-3xl text-balance text-3xl font-bold tracking-tight md:text-5xl">
             {study.title}
-          </h2>
+          </h3>
         </Reveal>
 
         <Reveal delay={180}>
@@ -273,7 +354,6 @@ function StudyBlock({ study, first }: { study: Study; first: boolean }) {
           </p>
         </Reveal>
 
-        {/* Facts */}
         <Reveal delay={240}>
           <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 border-y border-border py-8 md:grid-cols-4">
             {study.facts.map((fact) => (
@@ -289,7 +369,6 @@ function StudyBlock({ study, first }: { study: Study; first: boolean }) {
           </dl>
         </Reveal>
 
-        {/* Challenge + engagement */}
         <div className="mt-14 grid gap-10 md:grid-cols-2 md:gap-12">
           <Reveal delay={80}>
             <div className="flex flex-col">
@@ -323,7 +402,6 @@ function StudyBlock({ study, first }: { study: Study; first: boolean }) {
           </Reveal>
         </div>
 
-        {/* Results (complete) OR status panel (in progress) */}
         {study.results ? (
           <Reveal delay={120}>
             <div className="mt-14 rounded-lg border border-border bg-card p-7 md:p-10">
@@ -401,8 +479,9 @@ export function CaseStudy() {
         </Reveal>
 
         <div className="mt-16 md:mt-20">
-          {studies.map((study, i) => (
-            <StudyBlock key={study.index} study={study} first={i === 0} />
+          <AmfCaseStudy />
+          {studies.map((study) => (
+            <StudyBlock key={study.index} study={study} />
           ))}
         </div>
       </div>
