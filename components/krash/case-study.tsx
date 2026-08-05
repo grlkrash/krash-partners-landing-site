@@ -226,13 +226,13 @@ function AmfCaseStudy() {
 
         <Reveal delay={120}>
           <div className="flex flex-col items-start md:items-end">
-            <div className="flex h-[150px] w-full max-w-[390px] items-center justify-center overflow-hidden rounded-[10px] bg-card shadow-[0_8px_30px_rgba(0,0,0,0.35)] md:w-[390px]">
+            <div className="flex w-full max-w-[390px] items-center justify-center rounded-[10px] bg-card p-6 shadow-[0_8px_30px_rgba(0,0,0,0.35)] md:w-[390px]">
               <Image
                 src="/case-studies/acmf-logo.png"
                 alt="Arcade Music Fest logo"
-                width={1311}
-                height={241}
-                className="h-auto w-full max-w-[340px] object-contain px-4"
+                width={1200}
+                height={450}
+                className="h-auto w-full object-contain"
                 priority
               />
             </div>
