@@ -81,7 +81,7 @@ const studies: Study[] = [
     },
     title: 'Building the partner engine for a flagship innovation conference.',
     intro:
-      'MidwestCon — the Cincinnati innovation and culture conference by Disruption Now — is a live Krash Partners engagement. We are developing sponsorship and partnership revenue ahead of the[...]
+      'MidwestCon — the Cincinnati innovation and culture conference by Disruption Now — is a live Krash Partners engagement. We are developing sponsorship and partnership revenue ahead of the event.',
     facts: [
       { label: 'Client', value: 'MidwestCon' },
       { label: 'Format', value: 'Innovation conference' },
@@ -128,7 +128,7 @@ const studies: Study[] = [
     },
     title: 'Turning a Louisville esports community into a partner platform.',
     intro:
-      'Villeage Esports & Entertainment — the Louisville-based esports and entertainment organization — is the next Krash Partners engagement. Work kicks off around October, with the case stu[...]
+      'Villeage Esports & Entertainment — the Louisville-based esports and entertainment organization — is the next Krash Partners engagement. Work kicks off around October.',
     facts: [
       { label: 'Client', value: 'Villeage E&E' },
       { label: 'Format', value: 'Esports & entertainment' },
