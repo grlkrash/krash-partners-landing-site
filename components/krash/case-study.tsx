@@ -39,13 +39,13 @@ type Study = {
 
 const amfStats = [
   {
-    value: '~$4,075',
+    value: '~$4,150',
     asterisk: true,
     label: 'new revenue · ~21% on ~$19.3K base',
     projected: false,
   },
   {
-    value: '$1,975',
+    value: '$2,050',
     asterisk: false,
     label: 'booked vendor fees',
     projected: false,
@@ -81,7 +81,7 @@ const studies: Study[] = [
     },
     title: 'Building the partner engine for a flagship innovation conference.',
     intro:
-      'MidwestCon — the Cincinnati innovation and culture conference by Disruption Now — is a live Krash Partners engagement. We are developing sponsorship and partnership revenue ahead of the event, with the full results set to publish once the conference wraps in September.',
+      'MidwestCon — the Cincinnati innovation and culture conference by Disruption Now — is a live Krash Partners engagement. We are developing sponsorship and partnership revenue ahead of the[...]
     facts: [
       { label: 'Client', value: 'MidwestCon' },
       { label: 'Format', value: 'Innovation conference' },
@@ -128,7 +128,7 @@ const studies: Study[] = [
     },
     title: 'Turning a Louisville esports community into a partner platform.',
     intro:
-      'Villeage Esports & Entertainment — the Louisville-based esports and entertainment organization — is the next Krash Partners engagement. Work kicks off around October, with the case study to follow once the first partnership cycle completes.',
+      'Villeage Esports & Entertainment — the Louisville-based esports and entertainment organization — is the next Krash Partners engagement. Work kicks off around October, with the case stu[...]
     facts: [
       { label: 'Client', value: 'Villeage E&E' },
       { label: 'Format', value: 'Esports & entertainment' },
@@ -294,7 +294,7 @@ function AmfCaseStudy() {
             </p>
             <p className="mt-2 text-pretty text-sm leading-relaxed text-muted-foreground md:text-base">
               840 bottles resold at $2.50 — up to ~$2,100, projected at sell-out
-              (25 cases donated + 5 bought, ~$0 cost). Separately, $1,975 in
+              (25 cases donated + 5 bought, ~$0 cost). Separately, $2,050 in
               vendor fees is already booked.
             </p>
           </div>
@@ -304,7 +304,7 @@ function AmfCaseStudy() {
       <Reveal delay={240}>
         <p className="mt-5 text-pretty text-[11px] leading-relaxed text-muted-foreground md:text-xs">
           <span className="font-semibold text-primary">*</span>{' '}
-          ~$4,075 = $1,975 booked vendor fees + ~$2,100 projected water resale
+          ~$4,150 = $2,050 booked vendor fees + ~$2,100 projected water resale
           at sell-out (realized on event day).
         </p>
       </Reveal>
